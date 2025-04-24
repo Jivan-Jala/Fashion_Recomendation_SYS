@@ -25,6 +25,12 @@ download_file(
     "embeddings.pkl"
 )
 
+import urllib.request
+
+EMBEDDING_URL = "https://github.com/Jivan-Jala/Fashion_Recomendation_SYS/releases/download/v1.0/embeddings.pkl"
+
+if not os.path.exists("embeddings.pkl"):
+    urllib.request.urlretrieve(EMBEDDING_URL, "embeddings.pkl")
 
 
 
