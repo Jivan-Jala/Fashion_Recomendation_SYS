@@ -10,6 +10,13 @@ from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 
+#upload the model using github release
+!wget https://github.com/Jivan-Jala/Fashion_Recomendation_SYS/releases/download/v1.0/embeddings.pkl
+
+from tensorflow.keras.models import load_model
+model = load_model('embeddings.pkl')
+
+
 # Ensure uploads directory exists
 if not os.path.exists("uploads"):
     os.makedirs("uploads")
