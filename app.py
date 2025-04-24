@@ -25,8 +25,7 @@ download_file(
     "embeddings.pkl"
 )
 
-from tensorflow.keras.models import load_model
-model = load_model('embeddings.pkl')
+
 
 
 # Ensure uploads directory exists
