@@ -11,7 +11,19 @@ from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 
 #upload the model using github release
-!wget https://github.com/Jivan-Jala/Fashion_Recomendation_SYS/releases/download/v1.0/embeddings.pkl
+import requests
+
+def download_file(url, filename):
+    if not os.path.exists(filename):
+        print(f"Downloading {filename}...")
+        response = requests.get(url)
+        with open(filename, 'wb') as f:
+            f.write(response.content)
+
+download_file(
+    "https://github.com/Jivan-Jala/Fashion_Recomendation_SYS/releases/download/v1.0/embeddings.pkl",
+    "embeddings.pkl"
+)
 
 from tensorflow.keras.models import load_model
 model = load_model('embeddings.pkl')
